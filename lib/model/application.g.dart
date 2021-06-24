@@ -8,9 +8,9 @@ part of 'application.dart';
 
 Application _$ApplicationFromJson(Map<String, dynamic> json) {
   return Application(
-    baseUrl: json['baseUrl'] as String,
-    connectTimeout: json['connectTimeout'] as int,
-    readTimeout: json['readTimeout'] as int,
+    baseUrl: json['baseUrl'] as String?,
+    connectTimeout: json['connectTimeout'] as int?,
+    readTimeout: json['readTimeout'] as int?,
   );
 }
 

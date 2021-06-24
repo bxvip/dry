@@ -22,6 +22,10 @@ class ApplicationContext {
     _path = path;
   }
 
+  init()async{
+    await this.loadApplication();
+  }
+
   Map beanMap = Map();
   late Application application;
 
@@ -30,5 +34,12 @@ class ApplicationContext {
     print("application:");
     print(globalConfiguration.appConfig);
     this.application = Application.fromJson(globalConfiguration.appConfig);
+  }
+
+  addBean(String key ,obj){
+    beanMap[key] = obj;
+  }
+  getBean(String key){
+    return beanMap[key];
   }
 }
